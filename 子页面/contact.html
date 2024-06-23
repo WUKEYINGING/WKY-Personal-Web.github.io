@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吴可莹の小窝【请联系我】</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/contact.css">
+</head>
+<body>
+<!-- ############页眉区############-->
+    <!-- *****设置页眉上方图像***** -->
+    <div id="header-image">欢 迎 您 ! 这 里 是 —— 吴 可 莹 の 小 窝</div>
+    <!-- *****设置页眉***** -->
+    <header>
+        <!-- ===页眉区的左边为【我的照片、姓名、班级】== -->
+        <div id="basic-info-l">
+            <!-- 我的照片以div id="my-photo"的背景图片呈现 -->
+            <div id="my-photo"></div>
+            <!-- 展示姓名、班级信息 -->
+            <div class="my-intro">
+                <h4 id="my-name">吴可莹</h4>
+                <div id="my-class">计科2202班</div>
+            </div>
+        </div>
+        <!-- ===页眉区的右边为【我的个人基本信息】== -->
+        <div id="basic-info-r">
+            <!-- 无序列表项*左,包含一系列的项目（<li>） -->
+            <ul class="header-contact">
+                <li><span class="overhead">学校</span>中南财经政法大学</li>
+                <li><span class="overhead">专业</span>计算机科学与技术</li>
+                <li><span class="overhead">政治面貌</span>共青团员</li>
+                <li><span class="overhead">籍贯</span>福建福鼎</li>
+                <li><span class="overhead">加权成绩</span>93.83</li>
+                <li><span class="overhead">座右铭</span><q>不断积累，飞跃必来，突破随之。</q></li>
+            </ul>
+            <!-- 无序列表项*右,包含一系列的项目（<li>） -->
+            <ul class="header-contact">
+                <li><span class="overhead">学院</span>信息工程学院</li>
+                <li><span class="overhead">学号</span>202221130300</li>
+                <li><span class="overhead">出生日期</span>2004年4月</li>
+                <li><span class="overhead">专业排名</span>3/90</li>
+                <li><span class="overhead">绩点</span>3.97</li>
+            </ul>
+        </div> 
+    </header>
+
+<!-- ############边栏导航区############-->
+    <nav class="sidebar">  
+        <ul>  
+          <li class="nav-item"><a href="../index.html">我的主页</a></li>  
+          <li class="nav-item"><a href="./resume.html">我的简历</a></li>  
+          <li class="nav-item"><a href="./detail.html">了解更多</a></li>  
+          <li class="nav-item  active"><a href="./contact.html">请联系我</a></li>  
+        </ul>  
+    </nav>  
+
+    
+<!-- ############主要内容区############-->   
+    <div class="main-content">  
+        <!-- 联系卡片 -->  
+        <h1>联系方式</h1>
+        <div class="contact-card">  
+            <div class="container-l">
+                <div class="container-box">
+                    <div class="icon">
+                        <img src="../image/contact页面图标/学校.png" alt="">
+                        <h3>学校</h3>
+                    </div>
+                    <div class="text">
+                        <p>中南财经政法大学</p>
+                    </div>
+                </div>
+                <div class="container-box">
+                    <div class="icon">
+                        <img src="../image/contact页面图标/地址.png" alt="">
+                        <h3>地址</h3>
+                    </div>
+                    <div class="text">
+                        <p>湖北省武汉市东湖新技术开发区南湖大道182号中南财经政法大学南湖校区滨湖一栋324</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-r">
+                <div class="container-box">
+                    <div class="icon">
+                        <img src="../image/contact页面图标/电话.png" alt="">
+                        <h3>电话</h3>
+                    </div>
+                    <div class="text">
+                        <p>18016768173</p>
+                    </div>
+                </div>
+                <div class="container-box">
+                    <div class="icon">
+                        <img src="../image/contact页面图标/邮箱.png" alt="">
+                        <h3>邮箱</h3>
+                    </div>
+                    <div class="text">
+                        <p>1820280261@qq.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 请联系我表单 -->  
+        <h1>给我留言</h1> 
+        <form id="contact-form" action="接收表单数据并将其保存到指定的文件或数据库中的php脚本" method="post">  
+
+            <div class="item flex-row">  
+                <div class="half">  
+                    <div class="icon">  
+                        <img src="../image/contact页面图标/性别.png" alt="" class="image-shrink"> <!-- 使用性别图标 -->  
+                        <h3 class="h3-shrink">性别:</h3>  
+                    </div>  
+                    <input type="radio" id="male" name="gender" value="male">  
+                    <label for="male" class="text_enlarge"> 男 </label>  
+                    <input type="radio" id="female" name="gender" value="female">  
+                    <label for="female" class="text_enlarge"> 女 </label>   
+                </div> 
+                <div class="half">  
+                    <div class="icon">  
+                        <img src="../image/contact页面图标/姓名.png" alt="" class="image-shrink">  
+                        <h3 class="h3-shrink">姓名:</h3>  
+                    </div>  
+                    <input type="text" id="name" name="name" required>  
+                </div>    
+            </div>  
+            <div class="item flex-row">  
+                <div class="half">  
+                    <div class="icon">
+                        <img src="../image/contact页面图标/出生日期.png" alt="" class="image-shrink">
+                        <h3 class="h3-shrink">出生日期:</h3>
+                    </div> 
+                    <input type="date" id="birthdate" name="birthdate">  
+                </div> 
+                <div class="half">  
+                    <div class="icon">
+                        <img src="../image/contact页面图标/电话.png" alt="" class="image-shrink">
+                        <h3 class="h3-shrink">电话:</h3>
+                    </div> 
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="例如: 123-456-7890">  
+                </div>    
+            </div>  
+            <div class="item flex-row">  
+                <div class="half">  
+                    <div class="icon">
+                        <img src="../image/contact页面图标/学历.png" alt="" class="image-shrink">
+                        <h3 class="h3-shrink">学历:</h3>
+                    </div>  
+                    <select id="education" name="education">  
+                        <option value="bachelor">本科</option>  
+                        <option value="master">硕士</option>  
+                        <option value="doctorate">博士</option>  
+                    </select>   
+                </div> 
+                <div class="half">  
+                    <div class="icon">
+                        <img src="../image/contact页面图标/邮箱.png" alt="" class="image-shrink">
+                        <h3 class="h3-shrink">邮箱:</h3>
+                    </div> 
+                    <input type="email" id="email" name="email" required>  
+
+                </div>    
+            </div>
+          
+            
+               
+            <!-- 从早上8点到晚上10点，每小时一个复选框 -->  
+            <div class="item">  
+                <div class="icon">  
+                    <img src="../image/contact页面图标/空闲时间.png" alt="" class="image-shrink">  
+                    <h3 class="h3-shrink">您的空闲时间段:</h3>  
+                </div>  
+                <div class="checkbox-wrapper">  
+                    <div class="checkbox-group">  
+                        <input type="checkbox" id="8:00 ~11:30" name="空闲时间段" value="8:00 ~11:30">  
+                        <label for="8:00 ~11:30" class="text_enlarge">8:00 ~11:30</label>  
+                    </div>  
+                    <div class="checkbox-group">  
+                        <input type="checkbox" id="11:30~14:00" name="空闲时间段" value="11:30~14:00">  
+                        <label for="11:30~14:00" class="text_enlarge">11:30~14:00</label>  
+                    </div>  
+         
+                    <div class="checkbox-group">  
+                        <input type="checkbox" id="14:30~17:30" name="空闲时间段" value="14:30~17:30">  
+                        <label for="14:30~17:30" class="text_enlarge">14:30~17:30</label>  
+                    </div>  
+                    <div class="checkbox-group">  
+                        <input type="checkbox" id="17:30~21:30" name="空闲时间段" value="17:30~21:30">  
+                        <label for="17:30~21:30" class="text_enlarge">17:30~21:30</label>  
+                    </div>  
+                </div>  
+            </div>
+   
+            <div class="item">  
+                <div class="icon">
+                    <img src="../image/contact页面图标/留言.png" alt="" class="image-shrink">
+                    <h3 class="h3-shrink">留言:</h3>
+                </div>   
+                <textarea id="message" name="message" required></textarea>  
+            </div>  
+            <div class="btn">  
+                <button type="submit">发送</button>  
+            </div>  
+        </form>  
+    </div>     
+    
+<!-- ############页脚区############-->
+    <footer>
+        <p>吴可莹の小窝© 2024吴可莹  All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

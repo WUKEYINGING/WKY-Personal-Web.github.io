@@ -1,0 +1,85 @@
+/* 设置表格整体样式 */
+table {  
+  width: 100%;  
+  border-collapse: collapse;  
+}  
+
+/* 设置表头单元格th和数据单元格的共有属性 */
+th, td {  
+  border: 1px solid #ddd;  
+  padding: 15px;  
+  text-align: left;  
+  vertical-align: top; /* 使得td中的文字顶部对齐 */  
+}  
+
+/* 设置表头单元格th属性 */
+th {  
+  background-color: #f2f2f2;  
+  font-weight: bold;  
+  font-size: 1.6em;
+  padding: 10px;
+}  
+
+/* 为偶数行数据单元格td设置不同的样式 */
+tr:nth-child(even) {  
+  background-color: #f9f9f9;  
+}  
+
+/* 设置无序列表和段落p的共有属性 */  
+ul.content-ul,p{
+  padding-left: 20px;
+  margin-top: 0;
+  font-size: 15px;
+  text-indent:2em;
+  line-height: 2em;
+  margin-bottom: 0;
+}
+
+/* 增加列表项之间的间距 */
+li.content-li {  
+  margin-bottom: 5px;   
+}  
+
+/* 设置部分单元格中的上半部分的h4和上半部分的h4的共有属性 */
+div.top h4 ,.under h4{  
+  line-height: 1em;
+  margin-top: 0; 
+  margin-bottom: 10px; 
+}
+
+/* 设置部分单元格中的上半部分 */
+div.top {  
+  display: flex;  
+  justify-content: space-between; /* 让子元素在水平方向上平均分布 */  
+  align-items: center; /* 垂直居中子元素 */  
+  margin: 0; 
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}  
+
+/* 设置部分单元格中的上半部分 */
+div.under{
+  font-size: 17px;
+}
+
+/* 采用flexbox布局并使其内部元素在水平竖直方向均居中排列 */
+td.skill{
+  display: flex;
+  justify-content: center;
+  gap: 15px;  /* 定义了Flex容器中的Flex项之间的间隔，即我的每个div.box间间隔为15px */
+}
+
+/* 将每一个技能都用div.box包裹，使其内部元素横向居中排列 */
+div.box{
+  text-align: center;
+  padding: 20px;
+}
+
+/* 设置每个技能logo图像的样式 */
+.box img {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+
+

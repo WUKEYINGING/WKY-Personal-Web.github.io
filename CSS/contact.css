@@ -1,0 +1,182 @@
+/* 联系卡片样式 */  
+.main-content .contact-card,.main-content form#contact-form {  
+
+    width: 97%; /* 占据父元素全部宽度 */  
+    border-radius: 30px; /* 圆角 */  
+    box-shadow: 0 2px 5px rgba(10, 10, 10, 0.4); /* 阴影 */  
+    padding: 20px; /* 内边距，让内容与边框有些空间 */  
+    margin-bottom: 20px; /* 卡片之间的间距 */  
+    height: 300px;
+}  
+.main-content .contact-card{
+    display: flex;
+}
+.main-content form#contact-form{
+    height: 1100px;
+}
+.main-content h1 {  
+    text-align: center; /* 标题居中对齐 */  
+    color: #333; /* 标题颜色 */  
+    margin-bottom: 15px; /* 标题与列表之间的间距 */  
+}  
+  
+.main-content .contact-card .container-l,.main-content .contact-card .container-r{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.main-content .contact-card .container-l{
+    margin-left: 100px;
+}
+
+.main-content .contact-card .container-r{
+    margin-left: 150px;
+}
+
+.container-box{
+    position: relative;
+    padding: 10px 0;
+    margin: 0px;
+}
+.flex-row {  
+    display: flex;  
+    justify-content: space-between; /* 在容器内均匀分布子元素 */  
+    align-items: center; /* 垂直居中子元素 */  
+}  
+  
+.half {  
+    flex: 0 0 48%; /* 占据容器宽度的约一半，留一些空间防止内容溢出 */  
+}
+.flex-row {  
+    display: flex;  
+    justify-content: space-between; /* 在容器内均匀分布子元素 */  
+    align-items: center; /* 垂直居中子元素 */  
+}  
+  
+
+.icon{
+    min-width: 60px;
+    height: 60px;
+    background-image: #fff;
+    display: flex;
+    border-radius: 50%;
+    font-size: 1em;
+}
+.icon .h3-shrink{
+    line-height: 0.5em;
+    margin-top: 12px;
+}
+.icon img{
+    margin-right: 20px;
+    height: 30px;
+    width: 30px;
+}
+
+.image-shrink{
+    width: 35px;
+    height: 35px;
+}
+
+.container-box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 1em;
+    color: #000;
+    flex-direction: column;
+    font-weight: 300;
+    line-height: 1em;
+}
+
+  
+form#contact-form div.item {  
+    margin-bottom: 30px;  
+}  
+  
+
+form#contact-form input[type="text"],  
+form#contact-form input[type="email"],  
+form#contact-form input[type="date"],
+form#contact-form input[type="tel"],
+
+select,
+form#contact-form textarea {  
+    width: 100%;  
+    height: 45px;
+    padding: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 15px;  
+    box-sizing: border-box; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px; 
+}  
+
+/* 单选框和复选框的样式 */  
+input[type="radio"],  
+input[type="checkbox"] {  
+    width: 15px;  
+    height: 15px;
+    margin-right: 10px; /* 调整与标签之间的间距 */  
+}  
+
+.checkbox-wrapper {  
+    display: flex;  
+    flex-wrap: wrap; /* 允许换行 */  
+    justify-content: space-between; /* 水平方向上均匀分布 */  
+}  
+  
+.checkbox-group {  
+    flex: 0 0 calc(50% - 10px); /* 每个组占据大约一半宽度，减去一些间隔 */  
+    margin-bottom: 20px; /* 组之间的垂直间隔 */  
+}  
+
+
+.text_enlarge{
+    font-size: 1.2em;
+}
+
+form#contact-form textarea {  
+    height: 300px;  
+    resize: vertical;  
+}  
+  
+div.btn{
+    display: flex; /* 设置为 Flex 容器 */  
+    justify-content: flex-end; /* 水平方向上靠右对齐 */  
+    align-items: flex-end; /* 垂直方向上靠下对齐 */  
+    padding: 5px; /* 可选内边距，防止按钮紧贴在容器边缘 */  
+    box-sizing: border-box; /* 包含内边距和边框在元素的总宽度和高度内 */ 
+}
+
+form#contact-form button[type="submit"] {  
+    background-image: linear-gradient(142.17deg, #3086FF 6.66%, #304CFD 91.48%);
+    box-shadow: inset -0.25rem -0.25rem 0.3125rem rgba(0, 0, 0, 0.1), inset 0.25rem 0.25rem 0.3125rem rgba(255, 255, 255, 0.23);
+    border-radius: 20px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.8em;
+    font-weight: 400;
+    line-height: 1;
+    padding: 0 24px;
+    position: relative;
+    transition: .4s ease-in-out;
+    white-space: nowrap;
+    opacity: .65;
+    width: 150px;
+    height: 70px;
+    margin-top: -10px;
+}  
+  
+form#contact-form button[type="submit"]:hover {  
+    background-color: #45a049;  
+}
+
+
+
+  
+
+  
+
+  

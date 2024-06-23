@@ -1,0 +1,280 @@
+/* ===============设置3个section的统一样式================= */
+section{
+    /* 采用flexbox布局，使得标题与下面的内容垂直排列，水平方相居中 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    height: auto;
+    width: 100%;
+}
+
+.main-content section h1 {  
+    text-align: center; /* 标题居中对齐 */  
+    color: #333; /* 标题颜色 */  
+    margin-bottom: 15px; /* 标题与列表之间的间距 */  
+    font-size: 2em;
+    text-decoration:underline;
+}  
+
+/* ================设置第一个section========================= */
+
+div.my-teachers{
+    /* 采用flexbox布局，并设置子元素垂直排列 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 垂直居中图片和叠加文本 */  
+    justify-content: center; 
+
+    border: #9c9a9a; 
+    border-radius: 30px; /* 圆角 */  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影 */  
+    padding: 20px; /* 内边距，让内容与边框有些空间 */  
+    margin-bottom: 20px; /* 卡片之间的间距 */  
+    height: 500px;
+}
+
+.teacher-list {
+    /* 采用flexbox布局，并设置子元素水平排列 */
+    display: flex;
+    align-items: center; /* 垂直居中图片和叠加文本 */  
+    justify-content: center; 
+    list-style: none;
+    width: 100%;
+}
+
+.teacher-item {  
+    /* 采用flexbox布局，并设置子元素垂直排列 */
+    display: flex;  
+    flex-direction: column;  
+
+    align-items: center; /* 水平居中图片和下方文字 */  
+    margin: 20px; 
+}  
+  
+.teacher-image-container {  
+    /* 设置相对定位以便绝对定位子元素.overlay-text */  
+    position: relative; 
+
+     /* 设置inline-flex布局使图片和叠加文本在同一行显示 */  
+    display: inline-flex;
+    align-items: center; /* 垂直居中图片和叠加文本 */  
+    justify-content: center; /* 水平居中图片（如果图片宽度小于容器） */  
+    width: 120px; /* 设置与图片相同的宽度 */  
+}  
+  
+.teacher-photo {  
+    width: 100%; /* 设置图片宽度 */  
+    height: auto; /* 保持图片的原始宽高比 */  
+    border: 3px solid #ccc; /* 添加边框 */  
+    border-radius: 10px; /* 添加圆角 */  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */  
+    transition: transform 0.3s ease; /* 添加过渡效果，用于鼠标悬停时的变换 */  
+}  
+
+.overlay-text {  
+    position: absolute; /* 绝对定位叠加文本，相对其父元素.teacher-image-container绝对定位 */  
+    bottom: 3px; /* 将文本定位到图片底部 */  
+    left: 0; /* 将文本的左边缘定位到其父元素的左边缘 */  
+    width: 83%; /* 设置与父元素相同的宽度 */  
+
+    text-align: center; /* 水平居中文本 */ 
+    transform: translateX(0%); /* 使用 transform 属性将文本水平居中 */  
+    color: white; /* 设置文本颜色 */  
+    background-color: rgba(0, 0, 0, 0.3); /* 设置半透明背景 */  
+
+    padding: 5px 10px; /* 添加内边距 */  
+    border-radius: 5px; /* 添加圆角 */  
+
+    visibility: hidden; /* 默认隐藏叠加文本 */
+    font-size: 0.9em;  
+    opacity: 0; /* 额外添加透明度，确保完全透明 */  
+    transition: visibility 0s, opacity 0.3s ease; /* 过渡效果 */  
+}  
+  
+.teacher-image-container:hover .overlay-text {  
+    visibility: visible; /* 鼠标悬停时显示叠加文本 */  
+    opacity: 1; /* 淡入效果 */  
+}
+.teacher-details {  
+    text-align: center; /* 下方文字居中显示 */  
+    margin-top: 10px; /* 可选：添加图片和下方文字之间的间距 */  
+}
+
+.course-teacher-name {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1.2em;
+    color: rgb(177, 109, 19);
+   
+    transition: transform 0.3s ease; 
+}
+
+/* 鼠标悬停时的样式 */
+.course-teacher-name:hover {  
+    color: rgb(232, 157, 60);
+    transform: scale(1.1); /* 放大到原始大小的 1.1 倍 */  
+  } 
+
+/* ================设置第二个section========================= */
+.work-item {  
+
+    /* 添加 Flexbox 布局以更好地控制内容 */  
+    display: flex; 
+    flex-direction: column; 
+
+    /* 使text-overlay能够相对于work-item定位 */ 
+    position: relative; 
+
+    width: 100%; /* 确保宽度占满容器 */
+    margin-bottom: 10px;  
+     
+}  
+  
+.image-item {  
+    width: 100%; /* 图片宽度占满容器 */  
+    height: auto; /* 保持图片的原始宽高比 */ 
+    border-radius: 30px; /* 圆角 */
+    border:3px solid white; 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+}  
+  
+.text-overlay {  
+    /* 绝对定位文本 */ 
+    position: absolute;  
+    bottom: 0; /* 将文本放在图片的底部 */  
+    left: 0; /* 将文本放在图片的左侧 */  
+    width: 100%;
+    line-height: 1.5em;
+    border-radius: 30px; /* 圆角 */ 
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */  
+
+    font-size: 2em; 
+    color: #fff;
+    padding: 10px; /* 内边距 */  
+    
+    opacity: 0; /* 初始时隐藏文本 */  
+    transition: opacity 0.3s ease; /* 过渡效果 */  
+    text-align: center; 
+    box-sizing: border-box; /* 包括边框和内边距在宽度内 */ 
+}  
+  
+.work-item:hover .text-overlay {  
+    opacity: 1; /* 鼠标悬停时显示文本 */  
+}
+
+div.my-works{
+    /* 采用flexbox布局并设置子元素在水平和竖直方向居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 97%;
+}
+
+div.left-works,div.right-works{
+    /* 采用flexbox布局并设置子元素在水平和竖直方向居中，占父元素的50%，内部元素按照垂直方向排列 */
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+
+/* ================设置第二个section========================= */
+.card-container {  
+     /* 采用flexbox布局并设置子元素在水平和竖直方向居中 */
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    width:100%;
+    padding: 10px;  
+}  
+  
+.flip-card {  
+    perspective: 1000px;  /* 设置透视效果 */
+    flex: 0 0 calc(50% - 20px);/* 占据父元素的空间还有减去margin */
+    margin: 10px;  
+    overflow: hidden;  
+}  
+  
+.flip-card-inner {  
+    /* 使用相对定位使得.flip-card-inner相对其定位 */
+    position: relative;  
+    height: 720px; /* 根据需要设置高度 */  
+    width: 100%;
+    transition: transform 0.6s; /* 过渡效果 */  
+    transform-style: preserve-3d;   /* 3D翻转效果 */
+    border-radius: 10px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+}  
+  
+.flip-card:hover .flip-card-inner {  
+    transform: rotateY(180deg);  
+}  
+  
+.flip-card-front, .flip-card-back {  
+    /* 绝对定位，设置相对父元素.flip-card-inner的位置 */
+    position: absolute;  
+
+    /* 采用flexbox布局并设置子元素在水平和竖直方向居中，且按照垂直方向排列 */
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;  
+
+    width: 100%;  
+    height: 100%;  
+    border-radius: 10px;  
+    backface-visibility: hidden;  
+    
+    padding: 15px;
+    box-sizing: border-box;  
+}  
+  
+.flip-card-front {  
+    background-color: #e5dfdf;  
+    color: rgb(201, 169, 127);  
+
+}  
+  
+.flip-card-back {  
+    background-color: #a9a5a5;  
+    color: white;  
+    transform: rotateY(180deg);   /* 绕Y轴旋转元素180度，实现翻转 */
+}  
+  
+.flip-card-back .img-row {
+    /* 采用flexnox布局 */
+    display: flex;  
+    justify-content: space-between; /* 图片之间等距分布 */  
+    background-color: #f5f5f5;  
+    padding: 10px;  
+    margin-bottom: 10px;  
+    max-height: 25%;
+}  
+  
+.flip-card-back .img-row img {  
+    max-width: 45%; /* 根据需要调整，确保图片不会过大 */   
+    object-fit: cover;  
+    margin: 0 auto 10px; /* 居中图片，底部间距 */  
+    padding: 10px;  
+    border: 1px solid #ddd;  
+    border-radius: 5px;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+    transition: all 0.3s ease;  
+    display: block; /* 确保图片是块级元素 */  
+
+    width: 100%; /* 宽度为父元素宽度的100% */  
+
+    object-fit: cover; /* 图片将被缩放以完全覆盖内容区域，同时保持其纵横比 */  
+
+}  
+  
+.card-back-content {  
+    font-size: 1.2em;  
+    letter-spacing: 0.1em;  
+    text-indent: 32px;  
+    margin: 15px; /* 与图片保持间距 */  
+}

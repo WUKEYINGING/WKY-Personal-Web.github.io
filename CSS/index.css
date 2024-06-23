@@ -1,0 +1,347 @@
+/* ########定义body的统一样式【开始】####### */
+body {  
+    padding-top: 280px; /* 至少大于页眉上方图像的height为280px，避免内容重叠 */  
+    margin: 0; /* 移除默认的margin */  
+
+    background-image: url(../image/背景/背景2.jpg);
+    background-repeat: no-repeat; /* 确保图像不重复 */  
+    background-size: cover; /* 图像将被缩放以完全覆盖内容区域 */  
+    background-position: center; /* 图像居中显示 */  
+    background-attachment: fixed;  /* 背景图像相对于视口是固定的，即使页面内容滚动，背景图像也不会移动。 */
+}  
+/* ########定义body的统一样式【结束】####### */
+
+
+/* ########页眉区样式设计【开始】####### */
+/* ====设置页眉上方图像的样式==== */
+#header-image {  
+
+   /*---页眉上方图像采用absolute控制 div#header-image 的定位，采用flexbox布局控制该元素内部子元素（这里的内部元素只有文字）的布局--- */
+
+   /* ---采用绝对定位其位置--- */
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 280px;
+    z-index: 0;
+    
+    /* ---启用flexbox布局內部子元素--- */  
+    display: flex; 
+    justify-content:center; /* 设计内部元素水平居中 */  
+    align-items:start; /* 设计内部元素垂直居中 */
+    
+    /* ---页眉上方区的图像作为div#header-image的背景填充--- */
+    background-image: url(../image/背景/背景1.jpg);   
+    background-size: cover; /*把背景图片放大到适合的尺寸，图片比例不变，超出容器的部分会被裁掉 */  
+    background-position: center; /* 图像居中显示 */  
+    border-bottom:30px solid rgb(223, 237, 242);/* 设置下边框 */ 
+
+    /* ----进行文本设置---- */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文本阴影 */  
+}  
+
+/* ====设置页眉的样式==== */
+header {
+    /* flexbox布局，内部元素默认横向排布，从而将header区分为左右两个部分 */
+    display: flex;
+
+    /* 这里主要是针对#header-image设置,因为d#header-image为固定布局,而header元素通过设置负值margin,会和它有部分重叠,为了放置header元素的内容被遮住,这里需要设置position为relative(相对固定布局元素#header-image) ,而z-index大于#header-image的z-index就可以了*/
+    position: relative;
+    z-index: 1;/* z-index=1大于#header-image的z-index=0 */
+
+    margin: -100px 100px 20px 100px;/* margin-top为负值, */
+    height: 220px;
+    padding: 20px; /* 添加内边距以确保有足够的空间显示圆角 */ 
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */ 
+    border-radius: 30px; /* 设置边框圆角,更美观 */
+}
+
+/* ----------左边区域----------- */
+/* 页眉左边区域的整体样式 */
+#basic-info-l{
+  /* header的子元素#basic-info-l也采用flex布局，不过它的子元素设置了flex-direction: column属性后就是竖向排列了，使得左边呈现的是包裹在#my-photo的照片在#my-name的文字的上方 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    flex: 0 0 15%;/* 这个是相对其父元素header设置的，说明它占据父元素的宽度为15% */
+    
+    padding-right: 0;
+}
+
+/* 设置照片对应的样式 */
+#my-photo{
+    width: 130px;  
+    height: 260px;  
+
+    background-image: url('../image/首页内容区用图/1寸.jpg') ;/* 我的证件照作为div#my-photo的背景元素 */ 
+    background-size: cover;
+    border: 6px solid white;
+    border-radius: 30px;
+
+    margin-top: -80px;/* 出于美观，使它超出父元素header一部分 */
+    margin-bottom: 15px;
+
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.05);/* 设置阴影,在水平方向上没有偏移（0），垂直方向上向下偏移6像素，模糊距离为6像素，颜色是半透明的黑色 */
+}
+
+/* 设置姓名文字对应的样式 */
+#my-name{
+    color: #3B4B5E;
+    font-size:1.2em;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    margin-top: 5px; 
+    margin-bottom: 15px;
+}
+
+/* 设置班级文字对应的样式 */
+#my-class {
+    font-size: 1.2em;
+    font-weight: 400;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ----------右边区域----------- */
+/* 页眉右边区域的整体样式 */
+#basic-info-r{
+
+   /* header的子元素#basic-info-r也采用flex布局，默认横向排列，使得两个无序列表在同一排排列（但是列表里的列表项仍然为默认的竖向排列） */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    border-radius: 30px;
+    padding: 20px;
+    flex:1;/* 这个是相对其父元素header设置的，说明它占据父元素中除了被#basic-info-l占据以外的所有空间 */
+
+    background-color:rgb(252, 250, 250);
+}
+
+/* 设置无序列表整体样式 */
+ul.header-contact {
+  /* 两个ul无序列表平分父元素#basic-info-r空间,使得页面看起来更美观 */
+  flex: 0 0 50%;
+
+  list-style: none;/* 删除无序列表的默认样式 */
+}
+
+/* 设置无序列表项样式 */
+li {
+    text-align: left; /* 将列表项中的文本将左对齐 */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 10px; 
+}
+
+/* 设置列表项中冒号前的文字样式 */
+.overhead {
+    color: rgba(94, 110, 128, 0.8);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 550;
+    font-size: 110%;
+    margin-right: 30px; /* 为.overhead和后面的文本之间添加一些间距 */
+}
+
+/* 设置座右铭的样式，采用p标签会自动加引号 */
+q{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    color: rgb(217, 129, 15);
+    transition: transform 0.3s ease; /* 添加过渡效果，使放大过程更平滑 */
+}
+
+/* 鼠标悬停时的样式 */ 
+q:hover {  
+    transform: scale(1.1); /* 放大到原始大小的 1.1 倍 */  
+  } 
+/* ########页眉区样式设计【结束】####### */
+   
+
+/* ########边栏导航区样式设计【开始】####### */
+
+nav.sidebar{  
+  /* 侧边栏采用绝对定位并设置固定的宽和高 */
+  position: absolute;
+  width: 140px;  
+  height:580px; 
+
+  /* 设置盒子样式 */
+  border-radius: 30px;
+  background-color:  rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 100px;/* 为了页面美观，这里的margin-left和header是一样的 */
+  margin-right: 10px;
+    
+  /* 设置字体样式 */
+  font-family: 'Montserrat', sans-serif;  
+}  
+    
+  /* 导航列表样式 */  
+nav.sidebar ul {  
+  list-style-type: none;  /* 去除无序列表的默认属性 */
+
+  padding: 20px;  
+  margin-bottom: 30px;  
+}  
+    
+  /* 导航项样式 */  
+.nav-item {  
+  /* 采用flexbox布局，水平排列子元素，这里主要是为了配合后面的text-align: center进行文本a标签居中 */
+  display: flex; /* 设置为 Flex 容器 */      
+  align-items: center; /* 垂直居中子元素 */      
+  justify-content: center;  /* 水平居中子元素 */ 
+    
+  /* 设置导航项的盒子样式 */
+  height: 90px;  
+  width: 120px;
+  padding: 10px 20px;  /* 增加水平内边距以增强点击区域 */  
+  border-radius: 30px; /* 圆角 */    
+  margin-bottom: 20px; /* 相互之间间距 */    
+  background-color: #fff; /* 默认背景色 */  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */ 
+
+  /* 设置文本样式 */
+  text-align: center;  
+  color: #333;    
+     
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+}  
+    
+  /* 选中或正在活动的导航项样式 */  
+.nav-item.active, .nav-item:hover {  
+  background-color: #007bff; /* 蓝色 */  
+  color: white; /* 文本颜色变为白色 */  
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* 改变阴影效果 */  
+}  
+    
+  /* 链接样式 */  
+.nav-item a {  
+  text-decoration: none;  
+  color: inherit;
+  font-family:inherit;
+  font-size: 1.5em; /* 字体大小 */ 
+  width: 100%;  
+}  
+/* ########边栏导航区样式设计【结束】####### */
+
+
+
+/* ########页脚区样式设计【开始】####### */
+/* 设置内容区的统一样式，且将会应用到所有页面 */
+div.main-content {
+  /* flexbox布局且设置内部元素从上至下堆叠排列 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* 设置内容区的盒子样式 */
+  border-radius: 30px; /* 添加圆角 */  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */  
+  background: rgba(255, 255, 255, 0.8); 
+  padding: 20px;
+  margin: 0px 100px 30px 300px;
+}  
+
+/* 设置每个卡片的样式 */
+div.card {  
+  /* 每张卡片都通过position: relative属性设置为相对定位，这意味着卡片内的绝对定位元素（如.card-overlay）会相对于卡片本身进行定位。 */
+  position: relative;
+
+  width: 97%; 
+  height: 300px;
+  overflow: hidden; /* 隐藏超出卡片的内容 */
+  margin-bottom: 10px; /* 设置卡片间间隔 */
+  border:10px solid #fff; 
+  border-radius: 30px;
+}  
+
+/* 卡片的图像样式 */
+img.card-image {  
+  width: 100%;  
+  height: 100%;  
+  object-fit: cover; /* 确保图片完整覆盖容器 */  
+  transition: transform 0.3s ease; /* 过渡效果，用于放大图片 */
+}  
+
+/* 设置悬停图片放大效果 */
+.card:hover .card-image {  
+  transform: scale(1.1); /* 放大图片 */  
+}
+
+/* 设置鼠标悬停时的黑框 */
+div.card-overlay {  
+
+  /* 设置为相对.card的绝对定位position: absolute，使其能够覆盖在卡片图片之上，并通过Flexbox布局将内部元素垂直和水平居中。   */
+  position: absolute; 
+
+  display: flex;  
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+
+   /*通过设置width: 100%; 和height: 100%;使得其占据卡片的整个空间）  */
+  top: 0;  
+  left: 0;  
+  width: 100%;  
+  height: 100%;  
+
+  padding: 20px;
+  background: rgba(0,0,0,0.5); /* 半透明背景 */  
+    
+  opacity: 0; /* 初始状态为完全透明,隐藏文本和链接 */  
+  transition: opacity 0.3s ease; /* 设置过渡效果*/  
+}  
+
+/* 设置伪类选择器.card:hover,表示如果鼠标悬停到该卡片则显示相应的文本和链接,透明度会变为1（完全不透明） */
+.card:hover .card-overlay {  
+  opacity: 1;   
+}
+  
+/* 设置卡片中的文本样式 */
+p.card-text {  
+  color: white;  
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2em;
+  font-weight: 800;
+  text-decoration: none;
+}  
+
+/* 设置卡片中的链接样式 */
+a.card-link { 
+  padding: 15px 30px;  
+  border: none;
+  margin-top: 10px;   
+  background-color: #4099ff;
+  border-radius: 10px;
+
+  color: #fff;  
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5em;  
+  text-decoration: none;  
+    
+  transition: background-color 0.3s ease;  
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);  
+}
+
+/* ########页脚区样式设计【开始】####### */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  background-color: #45a1ff;
+  color: #fff;
+}
+/* ########页脚区样式设计【结束】####### */
